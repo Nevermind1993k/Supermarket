@@ -20,16 +20,26 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public void save(Goods goods) {
-        /*for (Goods goods1 : goodsDao.getAll()) {
-            if ((goods.getName().equals(goods1.getName())) && (goods.getPrice() == goods1.getPrice())) {
-                System.out.println("This goods already int DB.");
-                System.out.println("Update the name: ");
+        /*List<Goods> goodsList = goodsDao.getAll();
+        for (Goods allGoods : goodsList) {
+            if (allGoods.getName().equals(goods.getName())) {
+                System.out.println("Goods with the same name and price already exists");
             } else {
+                System.out.println("Goods saved");
                 goodsDao.save(goods);
             }
         }*/
-        goodsDao.save(goods);
+
+        if ((goods.getPrice() > 0) && (goods.getName().length() <= 20) && (goods.getMerchant().length() <= 20)) {
+            System.out.println("Goods saved.");
+            goodsDao.save(goods);
+        } else {
+            System.out.println("Goods can't be saved. Because 1 or more condition doesn't satisfy ");
+            System.out.println("Price must be more then 0. Name and Merchant must be no more than 20 symbols");
+        }
+
     }
+
 
     @Override
     public Goods getById(int id) {
@@ -38,22 +48,12 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public Goods getByName(String name) {
-        if (name.length() <= 20) {
-            return goodsDao.getGoodsByName(name);
-        } else {
-            System.out.println("Name must be no more than 20 symbols");
-            return null;
-        }
+        return goodsDao.getGoodsByName(name);
     }
 
     @Override
     public Goods getByPrice(double price) {
-        if (price > 0) {
-            return goodsDao.getGoodsByPrice(price);
-        } else {
-            System.out.println("Price must be more then 0");
-            return null;
-        }
+        return goodsDao.getGoodsByPrice(price);
     }
 
     @Override

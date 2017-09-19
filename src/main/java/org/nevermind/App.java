@@ -22,15 +22,16 @@ public class App {
 
         Goods goods = new Goods();
         goods.setId(1);
-        goods.setName("Grisha123");
-        goods.setPrice(123);
-        goods.setMerchant("aagasgag123");
+        goods.setName("Grisha");
+        goods.setPrice(322.2);
+        goods.setMerchant("aagasgag");
 
         Goods goods1 = new Goods();
-        goods1.setName("Robert");
-        goods1.setPrice(228.8);
-        goods1.setMerchant("hahasaha");
+        goods1.setName("Vasian");
+        goods1.setPrice(0);
+        goods1.setMerchant("zzzzzz");
 
-        goodsService.update(goods);
+        goodsService.save(goods);
+
     }
 }
