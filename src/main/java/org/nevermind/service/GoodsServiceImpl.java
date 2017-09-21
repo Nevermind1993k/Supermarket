@@ -20,8 +20,6 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
 
-
-
     @Override
     public void save(Goods goods) {
         /*List<Goods> goodsList = goodsDao.getAll();
