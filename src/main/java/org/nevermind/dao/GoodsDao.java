@@ -25,5 +25,7 @@ public interface GoodsDao {
 
     void delete(String name);
 
+    void delete(Goods goods);
+
 
 }

@@ -15,6 +15,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Merchant</th>
+            <th>Control</th>
         </tr>
     <#list goods as good>
         <tr>
@@ -22,6 +23,7 @@
             <td>${good.name}</td>
             <td>${good.price}</td>
             <td>${good.merchant}</td>
+            <td> <input type="submit" title="Delete" value="X"/></td>
         </tr>
     </#list>
     </table>

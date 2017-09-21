@@ -18,25 +18,25 @@ public class GoodsDaoImpl implements GoodsDao {
 
     @Override
     public void save(Goods goods) {
-        String sql = "INSERT INTO demo.goods (name, price, merchant) VALUES (?,?,?);";
+        String sql = "INSERT INTO goods (name, price, merchant) VALUES (?,?,?);";
         jdbcTemplate.update(sql, goods.getName(), goods.getPrice(), goods.getMerchant());
     }
 
     @Override
     public Goods getGoodsById(int id) {
-        String sql = "SELECT * FROM demo.goods WHERE id = ?";
+        String sql = "SELECT * FROM goods WHERE id = ?";
         return jdbcTemplate.queryForObject(sql, new GoodsMapper(), id);
     }
 
     @Override
     public Goods getGoodsByName(String name) {
-        String sql = "SELECT * FROM demo.goods WHERE name = ?";
+        String sql = "SELECT * FROM goods WHERE name = ?";
         return jdbcTemplate.queryForObject(sql, new GoodsMapper(), name);
     }
 
     @Override
     public Goods getGoodsByPrice(Double price) {
-        String sql = "SELECT * FROM demo.goods WHERE price = ?";
+        String sql = "SELECT * FROM goods WHERE price = ?";
         return jdbcTemplate.queryForObject(sql, new GoodsMapper(), price);
     }
 
@@ -68,5 +68,11 @@ public class GoodsDaoImpl implements GoodsDao {
     public void delete(String name) {
         String sql = "DELETE FROM demo.goods WHERE name = ?";
         jdbcTemplate.update(sql, name);
+    }
+
+    @Override
+    public void delete(Goods goods) {
+        String sql = "DELETE FROM goods WHERE id=?";
+        jdbcTemplate.update(sql, goods.getId());
     }
 }

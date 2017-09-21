@@ -9,13 +9,17 @@ import java.util.List;
 
 public class GoodsServiceImpl implements GoodsService {
 
-
-    private final GoodsDao goodsDao;
-
     @Autowired
+    private GoodsDao goodsDao;
+
     public GoodsServiceImpl(GoodsDao goodsDao) {
         this.goodsDao = goodsDao;
     }
+
+    public GoodsServiceImpl() {
+    }
+
+
 
 
     @Override
@@ -84,6 +88,11 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public void delete(String name) {
         goodsDao.delete(name);
+    }
+
+    @Override
+    public void delete(Goods goods) {
+        goodsDao.delete(goods);
     }
 
 }

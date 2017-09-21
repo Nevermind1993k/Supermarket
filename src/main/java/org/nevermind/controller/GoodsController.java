@@ -37,4 +37,10 @@ public class GoodsController {
         return "redirect:goods";
     }
 
+    @PostMapping("/deleteGoods")
+    public String deleteGoods(@ModelAttribute Goods goods) {
+        goodsService.delete(goods);
+        return "redirect:goods";
+    }
+
 }

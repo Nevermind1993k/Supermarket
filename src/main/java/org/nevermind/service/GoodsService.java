@@ -25,5 +25,7 @@ public interface GoodsService {
 
     void delete(String name);
 
+    void delete(Goods goods);
+
 
 }
