@@ -1,6 +1,12 @@
-<form action="/newGoods" method="post" name="goods" class="form-group">
-    <input title="Name" type="text" name="name"/>
-    <input title="Price" type="number" name="price"/>
-    <input title="Merchant" type="text" name="merchant"/>
-    <input type="submit" title="OK" value="OK!"/>
-</form>
+<div id="content">
+    <fieldset>
+        <legend>Add Goods</legend>
+        <form action="/newGoods" method="post" name="goods" class="form-group">
+            Name : <input type="text" name="name"/><br/>
+            Price : <input type="number" name="price"/><br/>
+            Merchant: <input type="text" name="merchant"/><br/>
+            <input type="submit" value="Save"/>
+        </form>
+    </fieldset>
+    <br/>
+</div>

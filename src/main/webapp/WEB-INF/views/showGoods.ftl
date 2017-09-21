@@ -20,6 +20,7 @@
         <tr>
             <td>Price</td>
             <td>${good.price}</td>
+
         </tr>
         <tr>
             <td>Merchant</td>
